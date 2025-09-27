@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myweb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myweb
+  template:
+    metadata:
+      labels:
+        app: myweb
+    spec:
+      containers:
+      - name: myweb
+        image: muhammadfahrizal/mywebapp:latest   # ganti dengan image Docker Hub kamu
+        ports:
+        - containerPort: 80
